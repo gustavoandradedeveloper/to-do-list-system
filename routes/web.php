@@ -17,11 +17,17 @@ use App\Http\Controllers\CategoriaController;
 */
 
 Route::get('/',[Home::class,'index']);
-Route::get('/tarefa',[TarefaController::class,'index']);
-Route::get('/tarefa/add',[TarefaController::class,'add']);
-Route::get('/tarefa/edit',[TarefaController::class,'edit']);
 
 
-Route::get('/categoria',[CategoriaController::class,'index']);
-Route::get('/categoria/add',[CategoriaController::class,'add']);
-Route::get('/categoria/edit',[CategoriaController::class,'edit']);
+
+Route::prefix('tarefa')->group(function(){
+    Route::get('/',[TarefaController::class,'index']);
+    Route::get('add',[TarefaController::class,'add']);
+    Route::get('edit',[TarefaController::class,'edit']);
+});
+
+Route::prefix('categoria')->group(function(){
+    Route::get('/',[CategoriaController::class,'index']);
+    Route::get('add',[CategoriaController::class,'add']);
+    Route::get('edit',[CategoriaController::class,'edit']);
+});
