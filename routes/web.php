@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\TarefaController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,11 @@ use App\Http\Controllers\Home;
 */
 
 Route::get('/',[Home::class,'index']);
+Route::get('/tarefa',[TarefaController::class,'index']);
+Route::get('/tarefa/add',[TarefaController::class,'add']);
+Route::get('/tarefa/edit',[TarefaController::class,'edit']);
 
+
+Route::get('/categoria',[CategoriaController::class,'index']);
+Route::get('/categoria/add',[CategoriaController::class,'add']);
+Route::get('/categoria/edit',[CategoriaController::class,'edit']);
