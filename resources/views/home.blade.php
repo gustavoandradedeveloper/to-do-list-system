@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    
-</body>
-</html>
+@extends('layout.app')
+
+@section('main_body')
+    <div>
+        <div style="margin-top: 20%" class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Bem-vindo!</h4>
+            <p>Esta é a nossa aplicação para gerenciar suas tarefas!</p>
+            <hr>
+            <p class="mb-0">Acesse os menus de tarefas e categorias para iniciar. Bom uso!</p>
+        </div>
+    </div>
+@endsection

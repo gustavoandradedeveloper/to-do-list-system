@@ -8,7 +8,8 @@ class TarefaController extends Controller
 {
     //Método responsavel por lista todos as tarefas
     public function index(){
-        return view('tarefa/index');
+        $pagina = 'tarefas';
+        return view('tarefa/index', ['pagina' => $pagina]);
     }
 
     public function add(){
@@ -19,7 +20,8 @@ class TarefaController extends Controller
         return view('tarefa/edit');
     }
 
-    public function del(){
+    public function delete(){
+
         return view('tarefa/del');
     }
 }

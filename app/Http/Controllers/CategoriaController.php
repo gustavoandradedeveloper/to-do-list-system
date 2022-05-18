@@ -8,7 +8,8 @@ class CategoriaController extends Controller
 {
     //Método responsavel por lista todos as categorias
     public function index(){
-        return view('categoria/index');
+        $pagina = 'categorias';
+        return view('categoria/index', ['pagina' => $pagina]);
     }
 
     public function add(){

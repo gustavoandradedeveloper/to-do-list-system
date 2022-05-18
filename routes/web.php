@@ -18,16 +18,16 @@ use App\Http\Controllers\CategoriaController;
 
 Route::get('/',[Home::class,'index']);
 
-
-
 Route::prefix('tarefa')->group(function(){
-    Route::get('/',[TarefaController::class,'index']);
+    Route::get('/',[TarefaController::class,'index'])->name('tarefa');
     Route::get('add',[TarefaController::class,'add']);
-    Route::get('edit',[TarefaController::class,'edit']);
+    Route::get('edit/:id',[TarefaController::class,'edit']);
+    Route::delete('delete/:id',[TarefaController::class,'delete']);
 });
 
 Route::prefix('categoria')->group(function(){
     Route::get('/',[CategoriaController::class,'index']);
     Route::get('add',[CategoriaController::class,'add']);
-    Route::get('edit',[CategoriaController::class,'edit']);
+    Route::get('edit/:id',[CategoriaController::class,'edit']);
+    Route::delete('delete/{id}/tarefa/{id}',[CategoriaController::class,'delete'])->name('categoria.delete');
 });
