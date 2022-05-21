@@ -19,15 +19,17 @@ use App\Http\Controllers\CategoriaController;
 Route::get('/',[Home::class,'index']);
 
 Route::prefix('tarefa')->group(function(){
-    Route::get('/',[TarefaController::class,'index'])->name('tarefa');
-    Route::get('add',[TarefaController::class,'add']);
-    Route::get('edit/:id',[TarefaController::class,'edit']);
-    Route::delete('delete/:id',[TarefaController::class,'delete']);
+    Route::get('/',[TarefaController::class,'index'])->name('tarefa.index');
+    Route::get('add',[TarefaController::class,'add'])->name('tarefa.add');
+    Route::get('edit/:id',[TarefaController::class,'edit'])->name('tarefa.edit');
+    Route::delete('delete/:id',[TarefaController::class,'delete'])->name('tarefa.delete');
 });
 
 Route::prefix('categoria')->group(function(){
-    Route::get('/',[CategoriaController::class,'index']);
-    Route::get('add',[CategoriaController::class,'add']);
-    Route::get('edit/:id',[CategoriaController::class,'edit']);
-    Route::delete('delete/{id}/tarefa/{id}',[CategoriaController::class,'delete'])->name('categoria.delete');
+    Route::get('/',[CategoriaController::class,'index'])->name('categoria.index');
+    Route::get('add',function(){return view('categoria.add');})->name('categoria.add');
+    Route::post('add',[CategoriaController::class,'add'])->name('categoria.add');
+    Route::get('edit/{id}',[CategoriaController::class,'edit'])->name('categoria.edit');
+    Route::post('atualizar/{id}',[CategoriaController::class,'atualizar'])->name('categoria.atualizar');
+    Route::get('delete/{id}',[CategoriaController::class,'destroy'])->name('categoria.delete');
 });

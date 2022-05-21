@@ -9,7 +9,7 @@ class TarefaController extends Controller
     //Método responsavel por lista todos as tarefas
     public function index(){
         $pagina = 'tarefas';
-        return view('tarefa/index', ['pagina' => $pagina]);
+        return view('tarefa.index', ['pagina' => $pagina]);
     }
 
     public function add(){

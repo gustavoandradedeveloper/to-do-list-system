@@ -5,7 +5,7 @@
         <h2 style="margin-top: 5%"><span class="badge bg-secondary">Tarefas</span></h2>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{{ url('tarefa') }}" class="btn btn-success"> <span style="font-size: 20px"><strong>+</strong></span>
+        <a href="{{ route('tarefa.add') }}" class="btn btn-success"> <span style="font-size: 20px"><strong>+</strong></span>
             Tarefa</a>
     </div>
 

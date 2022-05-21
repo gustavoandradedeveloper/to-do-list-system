@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Categoria</title>
-</head>
-<body>
-    
-</body>
-</html>
+@extends('layout.app')
+
+@section('main_body')
+    <form action="{{route('categoria.add')}}" method="post">
+    @csrf
+        <div class="form-group pt-5">
+            <label for="formGroupExampleInput">Nome</label>
+            <input type="text" class="form-control" value="{{old('nome')}}" name="nome" id="formGroupExampleInput" placeholder="Informe o nome da categoria">
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
+    </form>
+@endsection

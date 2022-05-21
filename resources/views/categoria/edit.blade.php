@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Categoria</title>
-</head>
-<body>
-    
-</body>
-</html>
+@extends('layout.app')
+
+@section('main_body')
+    <form action="{{route('categoria.atualizar',$objCategoriaSelecionado->id)}}" method="post">
+    @csrf
+        <div class="form-group pt-5">
+            <label for="formGroupExampleInput">Nome</label>
+            <input type="text" class="form-control" value="{{$objCategoriaSelecionado->nome}}" name="nome" id="formGroupExampleInput" placeholder="Informe o nome da categoria">
+        </div>
+        <input type="hidden" name="id" value="{{$objCategoriaSelecionado->id}}">
+        <button type="submit" class="btn btn-primary mt-2">Atualizar</button>
+    </form>
+@endsection

@@ -14,9 +14,9 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">Home</a>
+                <a class="navbar-brand" href="{{ url('/') }}">HOME</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,12 +24,14 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link <?= isset($pagina) && $pagina == 'categorias' ? 'active' : '' ?>"
-                                href="{{ url('categoria') }}">Categorias</a>
+                            <a class="nav-link <?= isset($pagina) && $pagina == 'categorias' ? 'active' : '' ?>" href="{{ route('categoria.index') }}">
+                                CATEGORIAS
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= isset($pagina) && $pagina == 'tarefas' ? 'active' : '' ?>"
-                                href="{{ url('tarefa') }}">Tarefas</a>
+                            <a class="nav-link <?= isset($pagina) && $pagina == 'tarefas' ? 'active' : '' ?>"href="{{ route('tarefa.index') }}">
+                                TAREFAS
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -43,5 +45,4 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
-
 </html>
