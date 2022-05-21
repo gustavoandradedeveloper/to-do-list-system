@@ -1,9 +1,8 @@
 @extends('layout.app')
 
 @section('main_body')
-    <form action="{{route('categoria.add')}}" method="post">
-    @csrf
-        
+    <form action="{{route('tarefa.add')}}" method="post">
+    @csrf   
     <fieldset class="mt-5 border p-2">
         <legend class="font-small">
             <i class="far fa-address-card"></i>
@@ -13,23 +12,21 @@
         <div class="form-group row">
             <div class="col-md-4">
                 <label>Tarefa<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="" placeholder="Informe a tarefa" value="">                  
+                <input type="text" class="form-control" name="nome" placeholder="Informe a tarefa" value="">                  
             </div>
             <div class="col-md-4">
                 <label>Categoria <span class="text-danger">*</span></label>
-                <select class="form-control custom-select" name="">
-                @foreach
+                <select class="form-control custom-select" name="categoria_id">
                     <option value="1"> Urgente</option>  
                     <option value="2"> Importante</option>
                     <option value="3"> Não importante</option>
                     <option value="3"> Não urgente</option>
-                    <option value="4"> Outros</option>
-                @endforeach
+                    <option value="4"> Outros</option> 
                 </select>
             </div>
             <div class="col-md-4">
                 <label>Status <span class="text-danger">*</span></label>
-                <select class="form-control custom-select" name="">
+                <select class="form-control custom-select" name="status">
                     <option value="1"> Aberta</option>  
                     <option value="2"> Concluída</option>
                 </select>
@@ -41,7 +38,7 @@
             </div>
             <div class="col-sm-6 mb-1 mt-3 mb-sm-0">
                 <label>Data de Termino</label>
-                <input type="date" class="form-control form-control" name="data_inicio" value="">
+                <input type="date" class="form-control form-control" name="data_termino" value="">
             </div>
         </div>
     </fieldset> 
