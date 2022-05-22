@@ -21,7 +21,7 @@
             @foreach ($listaCategorias as $categoria)
                 <tr>
                     <td>{{ $categoria->id }}</td>
-                    <td>{{ $categoria->nome }}</td>
+                    <td>{{ $categoria->categoria_nome }}</td>
                     <td>
                         <a href="{{route('categoria.edit',$categoria->id)}}" type="button" class="btn btn-primary btn-sm">Editar</a>
                         

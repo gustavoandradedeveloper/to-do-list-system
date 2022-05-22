@@ -15,7 +15,7 @@ class CreateTarefasTable extends Migration
     {
         Schema::create('tarefas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',120);
+            $table->string('tarefa_nome',120);
             $table->date('dt_inicio');
             $table->date('dt_termino');
             $table->integer('status')->default(0);

@@ -24,7 +24,7 @@ class CategoriaController extends Controller
             'nome' => 'required'
         ]);
         $objCategoria = new Categoria();
-        $objCategoria->nome =  $objRequest->nome; 
+        $objCategoria->categoria_nome =  $objRequest->nome; 
         $objCategoria->save();
         return redirect()->route('categoria.index');
     }
@@ -39,7 +39,7 @@ class CategoriaController extends Controller
 
     public function atualizar(Request $objRequest, $id){
         $objCategoria =Categoria::find($id);
-        $objCategoria->nome = $objRequest->nome;
+        $objCategoria->categoria_nome = $objRequest->nome;
         $objCategoria->save();
         return redirect()->route('categoria.index');
 

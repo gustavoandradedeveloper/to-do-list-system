@@ -1,6 +1,8 @@
 @extends('layout.app')
 
 @section('main_body')
+
+   
     
     <div>
         <h2 style="margin-top: 5%"><span class="badge bg-secondary">Tarefas</span></h2>
@@ -9,7 +11,6 @@
         <a href="{{ route('tarefa.add') }}" class="btn btn-success"> <span style="font-size: 20px"><strong>+</strong></span>
             Tarefa</a>
     </div>
-
     <table style="margin-top: 2%" class="table table-hover">
         <tr>
             <th style="width: 5%">#</th>
@@ -20,19 +21,22 @@
             <th style="width: 10%">Status</th>
             <th style="width: 15%">Ações</th>
         </tr>
+        
         @if (isset($tarefas))
-            @foreach ($tarefas as $tarefa)
+            @foreach ($listaCategorias as $categoria)
             <?php
-                $dt_inicio = implode('-', array_reverse(explode('-',$tarefa->dt_inicio)));
-                $dt_termino = implode('-', array_reverse(explode('-',$tarefa->dt_termino)));
+            
+                $dt_inicio = implode('-', array_reverse(explode('-',$categoria->dt_inicio)));
+                $dt_termino = implode('-', array_reverse(explode('-',$categoria->dt_termino)));
             ?>
                 <tr>
-                    <td>{{ $tarefa->id }}</td>
-                    <td>{{ $tarefa->nome }}</td>
-                    <td>{{ $dt_inicio}}</td>
-                    <td>{{ $dt_termino }}</td>
-                    <td>{{ $tarefa->categoria_id}}</td>
-                    <td>{{ $tarefa->status}}</td>
+                    
+                    <td>{{ $categoria->id }}</td>
+                    <td>{{ $categoria->tarefa_nome }}</td>
+                    <td>{{ $categoria->dt_inicio}}</td>
+                    <td>{{ $categoria->dt_termino }}</td>
+                    <td>{{ $categoria->categoria_nome }}</td>
+                    <td>{{ $categoria->status}}</td>
                     <td>
                         <button type="button" class="btn btn-primary btn-sm">Editar</button>
                         <button type="button" class="btn btn-danger btn-sm">Apagar</button>
