@@ -8,15 +8,12 @@
         <a href="{{ route('categoria.add') }}" class="btn btn-success"> <span style="font-size: 20px"><strong>+</strong></span>
             Categoria</a>
     </div>
-
     <table style="margin-top: 2%" class="table table-hover">
         <tr>
             <th style="width: 5%">#</th>
             <th style="width: 80%">Nome</th>
             <th style="width: 15%">Ações</th>
-        </tr>
-
-        
+        </tr> 
         @if (isset($listaCategorias))
             @foreach ($listaCategorias as $categoria)
                 <tr>
@@ -25,8 +22,7 @@
                     <td>
                         <a href="{{route('categoria.edit',$categoria->id)}}" type="button" class="btn btn-primary btn-sm">Editar</a>
                         
-                        <a href="{{route('categoria.delete',$categoria->id)}}" type="button" class="btn btn-danger btn-sm">Apagar</a>
-                        
+                        <a href="{{route('categoria.delete',$categoria->id)}}" type="button" class="btn btn-danger btn-sm">Apagar</a>   
                     </td>
                 </tr>
             @endforeach

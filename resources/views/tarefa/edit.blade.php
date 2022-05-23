@@ -3,7 +3,6 @@
 @section('main_body')
     <form action="{{route('tarefa.atualizar',$objTarefaSelecionada->id)}}" method="post">
     @csrf   
-
     <fieldset class="mt-5 border p-2">
         <legend class="font-small">
             <i class="far fa-address-card"></i>
@@ -15,11 +14,18 @@
                 <input type="text" class="form-control" name="tarefa_nome" placeholder="Informe a tarefa" value="{{$objTarefaSelecionada->tarefa_nome}}">                  
             </div>
             <div class="col-md-4">
-            
                 <label>Categoria <span class="text-danger">*</span></label>
-                <select class="form-control custom-select" name="categoria_id">
+                <select class="form-control custom-select" name="categoria_id">     
+                    @foreach ($listaTarefas as $lista )
+                        <option value="{{$lista->id}}">{{$lista->categoria_nome}}</option>
+                         @php 
+                             $categoria_nome = $lista->categoria_nome ;
+                         @endphp
+                    @endforeach       
                     @foreach ($listaCategorias as $categoria)
-                        <option value="{{$categoria->id}}">{{$categoria->categoria_nome}}</option>  
+                        @if ($categoria_nome != $categoria->categoria_nome )
+                            <option value="{{$categoria->id}}">{{$categoria->categoria_nome}}</option>  
+                        @endif   
                     @endforeach  
                 </select>
             </div>
@@ -29,8 +35,7 @@
                     <option value="1"> Aberta</option>  
                     <option value="2"> Concluída</option>
                 </select>
-            </div>
-            
+            </div>  
             <div class="col-sm-6 mb-1 mt-3 mb-sm-0">
                 <label>Data de inicio</label>
                 <input type="date" class="form-control form-control" name="dt_inicio" value="{{$objTarefaSelecionada->dt_inicio}}">

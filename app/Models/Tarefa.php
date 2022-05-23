@@ -11,5 +11,9 @@ class Tarefa extends Model
     use SoftDeletes;
     use HasFactory;
 
+    //realização de relacionamento entre a tabela categoria
+    public function categoria(){
+        return $this->belongsTo('App\Models\Categoria');
+    }
     
 }
