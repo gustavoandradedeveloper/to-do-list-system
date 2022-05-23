@@ -37,7 +37,7 @@
                 <label>Data de inicio</label>
                 <input type="date" class="form-control form-control" name="data_inicio" value="">
             </div>
-            <div class="col-sm-6 mb-1 mt-3 mb-sm-0">
+           <div class="col-sm-6 mb-1 mt-3 mb-sm-0">
                 <label>Data de Termino</label>
                 <input type="date" class="form-control form-control" name="data_termino" value="">
             </div>

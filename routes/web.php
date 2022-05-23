@@ -24,8 +24,9 @@ Route::prefix('tarefa')->group(function(){
     Route::get('add',[TarefaController::class,'add'])->name('tarefa.add');
     Route::post('add',[TarefaController::class,'salvar'])->name('tarefa.salvar');
 
-    Route::get('edit/:id',[TarefaController::class,'edit'])->name('tarefa.edit');
-    Route::delete('delete/:id',[TarefaController::class,'delete'])->name('tarefa.delete');
+    Route::get('edit/{id}',[TarefaController::class,'edit'])->name('tarefa.edit');
+    Route::post('atualizar/{id}',[TarefaController::class,'atualizar'])->name('tarefa.atualizar');
+    Route::get('delete/{id}',[TarefaController::class,'destroy'])->name('tarefa.delete');
 });
 
 Route::prefix('categoria')->group(function(){

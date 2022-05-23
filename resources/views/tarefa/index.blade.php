@@ -23,23 +23,23 @@
         </tr>
         
         @if (isset($tarefas))
-            @foreach ($listaCategorias as $categoria)
+            @foreach ($listaCategorias as $tarefa)
             <?php
             
-                $dt_inicio = implode('-', array_reverse(explode('-',$categoria->dt_inicio)));
-                $dt_termino = implode('-', array_reverse(explode('-',$categoria->dt_termino)));
+                $dt_inicio = implode('-', array_reverse(explode('-',$tarefa->dt_inicio)));
+                $dt_termino = implode('-', array_reverse(explode('-',$tarefa->dt_termino)));
             ?>
                 <tr>
                     
-                    <td>{{ $categoria->id }}</td>
-                    <td>{{ $categoria->tarefa_nome }}</td>
-                    <td>{{ $categoria->dt_inicio}}</td>
-                    <td>{{ $categoria->dt_termino }}</td>
-                    <td>{{ $categoria->categoria_nome }}</td>
-                    <td>{{ $categoria->status}}</td>
+                    <td>{{ $tarefa->id }}</td>
+                    <td>{{ $tarefa->tarefa_nome }}</td>
+                    <td>{{ $dt_inicio}}</td>
+                    <td>{{ $dt_termino }}</td>
+                    <td>{{ $tarefa->categoria_nome }}</td>
+                    <td>{{ (($tarefa->status == 1)? 'Aberta' : 'concluida' )}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-sm">Editar</button>
-                        <button type="button" class="btn btn-danger btn-sm">Apagar</button>
+                        <a href="{{route('tarefa.edit',$tarefa->id)}}" type="button" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="{{route('tarefa.delete',$tarefa->id)}}" type="button" class="btn btn-danger btn-sm">Apagar</a>
                     </td>
                 </tr>
             @endforeach
