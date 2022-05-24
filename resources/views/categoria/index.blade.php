@@ -8,6 +8,9 @@
         <a href="{{ route('categoria.add') }}" class="btn btn-success"> <span style="font-size: 20px"><strong>+</strong></span>
             Categoria</a>
     </div>
+    @isset($erroTarefaAssociadaID)
+        <div class="bg-danger text-light text-center mt-3">Oops... Sinto muito, mas você não pode apagar essa categoria, existe uma tarefa associada a ela!</div>
+    @endisset
     <table style="margin-top: 2%" class="table table-hover">
         <tr>
             <th style="width: 5%">#</th>

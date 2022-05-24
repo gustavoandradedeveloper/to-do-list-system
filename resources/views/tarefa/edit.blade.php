@@ -42,14 +42,15 @@
             </div>
            <div class="col-sm-6 mb-1 mt-3 mb-sm-0">
                 <label>Data de Termino</label>
-                <input type="date" class="form-control form-control" name="dt_termino" value="{{$objTarefaSelecionada->dt_inicio}}">
+                <input type="date" class="form-control form-control" name="dt_termino" value="{{$objTarefaSelecionada->dt_termino}}">
             </div>
         </div>
     </fieldset> 
 		<div class="mt-3">
 			<input type="hidden" name="id" value="{{$objTarefaSelecionada->id}}">
             <button type="submit" class="btn btn-primary mt-2">Atualizar</button>
-            <a title="Voltar" href="{{route('tarefa.index')}}" class="btn btn-primary btn-sm ml-2">
+
+            <a title="Voltar" href="{{route('tarefa.index')}}" class="btn btn-primary mt-2">
                 <i class="fas fa-chevron-left"></i>&nbsp Voltar
 			</a>
 		</div>

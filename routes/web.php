@@ -30,6 +30,7 @@ Route::prefix('tarefa')->group(function(){
 
 Route::prefix('categoria')->group(function(){
     Route::get('/',[CategoriaController::class,'index'])->name('categoria.index');
+    Route::get('erro/{erroTarefaAssociadaID}',[CategoriaController::class,'erro'])->name('categoria.indexErro');
     Route::get('add',function(){return view('categoria.add');})->name('categoria.add');
     Route::post('add',[CategoriaController::class,'add'])->name('categoria.add');
     Route::get('edit/{id}',[CategoriaController::class,'edit'])->name('categoria.edit');

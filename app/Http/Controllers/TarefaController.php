@@ -17,9 +17,10 @@ class TarefaController extends Controller
         return view('tarefa.index', ['pagina' => $pagina,'tarefas' => $tarefas]);
     }
     public function add(){
+        $pagina = 'tarefas';  
         $objCategoria = new Categoria();
         $lista =  $objCategoria->all();
-        return view('tarefa/add',['categorias'=>$lista]);
+        return view('tarefa/add',['categorias'=>$lista, 'pagina' => $pagina]);
     }
     public function salvar(Request $objRequest){
         $objTarefa = new Tarefa();
@@ -32,6 +33,7 @@ class TarefaController extends Controller
         return redirect()->route('tarefa.index');
     }
     public function edit($id){
+        $pagina = 'tarefas';  
         $lista = DB::table('categorias')
             ->where('tarefas.id','=', $id)
             ->join('tarefas','tarefas.categoria_id','=','categorias.id')
@@ -41,7 +43,7 @@ class TarefaController extends Controller
         $objCategoria = new Categoria();
         $objListaCategoria = $objCategoria->all();
         $objTarefaSelecionada = $objTarefa->find($id);
-        return view('tarefa/edit',['objTarefaSelecionada'=>$objTarefaSelecionada, 'listaCategorias'=> $objListaCategoria, 'listaTarefas'=>$lista]);
+        return view('tarefa/edit',['pagina' => $pagina,'objTarefaSelecionada'=>$objTarefaSelecionada, 'listaCategorias'=> $objListaCategoria, 'listaTarefas'=>$lista]);
     }
     public function atualizar(Request $objRequest, $id){
         $objTarefa =Tarefa::find($id);

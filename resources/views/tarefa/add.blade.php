@@ -11,11 +11,11 @@
         <div class="form-group row">
             <div class="col-md-4">
                 <label>Tarefa<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="tarefa_nome" placeholder="Informe a tarefa" value="">                  
+                <input type="text" class="form-control" name="tarefa_nome" placeholder="Informe a tarefa" value="" required>                  
             </div>
             <div class="col-md-4">    
                 <label>Categoria <span class="text-danger">*</span></label>
-                <select class="form-control custom-select" name="categoria_id">
+                <select class="form-control custom-select" name="categoria_id" required>
                     @foreach ($categorias as $categoria)
                         <option value="{{$categoria->id}}">{{$categoria->categoria_nome}}</option>  
                     @endforeach
@@ -30,11 +30,11 @@
             </div>   
             <div class="col-sm-6 mb-1 mt-3 mb-sm-0">
                 <label>Data de inicio</label>
-                <input type="date" class="form-control form-control" name="data_inicio" value="">
+                <input type="date" class="form-control form-control" name="data_inicio" value="" required>
             </div>
            <div class="col-sm-6 mb-1 mt-3 mb-sm-0">
                 <label>Data de Termino</label>
-                <input type="date" class="form-control form-control" name="data_termino" value="">
+                <input type="date" class="form-control form-control" name="data_termino" value="" required>
             </div>
         </div>
     </fieldset> 
